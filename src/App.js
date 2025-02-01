@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import { CiBookmarkCheck } from "react-icons/ci";
+import { MdDeleteOutline } from "react-icons/md";
 
 function App() {
   const [isCompleteScreen, setIsCompleteScreen] = useState(false);
@@ -46,9 +48,9 @@ function App() {
             <p> Description</p>
           </div>
 
-          <div>
-            
-
+          <div className="cons">
+          <MdDeleteOutline className="del-icon"/>
+          <CiBookmarkCheck className="check-icon"/>
           </div>
 
         </div>
