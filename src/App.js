@@ -22,6 +22,20 @@ function App() {
          
         </div>
       </div>
+
+      <div className="btnArea">
+        <button>Todo</button>
+        <button>Completed</button>
+      </div>
+
+      <div className="displayArea">
+        <div className="items">
+          <h2>Task1</h2>
+          <p> Description</p>
+
+        </div>
+      </div>
+
     </div>
   );
 }
