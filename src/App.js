@@ -20,7 +20,9 @@ function App() {
       description: newDescription,
     }
 
-    let updatedTodo
+    let updatedTodoArr =[...allTodos];
+    updatedTodoArr.push(newTodoItem);
+    setTodos(updatedTodoArr);
   }
 
   return (
@@ -60,10 +62,14 @@ function App() {
         </div>
 
         <div className="displayArea">
-          <div className="items">
+         {allTodos.map((item,index)=>{
+          return(
+            <div className="items" key={index}>
             <h2>Task 1</h2>
             <p> Description</p>
           </div>
+          )
+         })}
 
           <div className="cons">
           <MdDeleteOutline className="del-icon"/>
