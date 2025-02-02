@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React,{ useState,useEffect} from "react";
 import "./App.css";
 import { CiBookmarkCheck } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
@@ -27,6 +27,12 @@ function App() {
     // This helps in handling the save action even we refresh the page
     localStorage.setItem(`todolist`, JSON.stringify(updatedTodoArr));
   }
+
+  // use effect hork for when the page is rendered
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todolist");
+  },[])
+
 
   return (
     <div className="App">
