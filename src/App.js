@@ -19,10 +19,13 @@ function App() {
       title: newTitle,
       description: newDescription,
     }
-
+// This helps in handling Add on display Section
     let updatedTodoArr =[...allTodos];
     updatedTodoArr.push(newTodoItem);
     setTodos(updatedTodoArr);
+
+    // This helps in handling the save action even we refresh the page
+    localStorage.setItem(`todolist`, JSON.stringify(updatedTodoArr));
   }
 
   return (
