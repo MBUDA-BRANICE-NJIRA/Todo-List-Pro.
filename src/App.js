@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Best Planner</h1>
+      <h1>The Planner</h1>
 
       <div className="todo-box">
         <div className="todo-input">
