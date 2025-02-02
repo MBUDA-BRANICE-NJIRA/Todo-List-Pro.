@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import "./App.css";
 import { CiBookmarkCheck } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
@@ -10,17 +10,17 @@ function App() {
   // state to contail all todo list
 
   const[allTodos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState("");
+  const [newTitle, setNewTitle] = useState("");
   const[newDescription, setNewDescription]= useState("");
 
-  const handleAddTodo = () => {
+  // For the button arrow funchion
+  const handleAddTodo = () =>{
     let newTodoItem = {
-      title:newTitle,
-      description:newDescription,
+      title: newTitle,
+      description: newDescription,
     }
-    let updatedTodoArr =[...allTodos];
-    updatedTodoArr,push(newTodoItem);
-    setTodos(updatedTodoArr);
+
+    let updatedTodo
   }
 
   return (
@@ -31,12 +31,12 @@ function App() {
         <div className="todo-input">
           <div className="todo-items">
             <label>Title</label>
-            <input type="text" value={newTitle} onchange={(e)=>setNewTitle(e.target.value)} placeholder="Task For the Day" />
+            <input type="text" value={newTitle} onChange={(e)=>setNewTitle(e.target.value)} placeholder="Task For the Day" />
           </div>
 
           <div className="todo-items">
-            <label>Descriiption</label>
-            <input type="text" value={newDescription} onchange={(e)=>setNewDescription(e.target.value)} placeholder="Task For the Description" />
+            <label>Description</label>
+            <input type="text" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} placeholder="Task For the Description" />
           </div>
 
           <button className="primary-button" type="button" onClick={handleAddTodo}>
@@ -60,9 +60,7 @@ function App() {
         </div>
 
         <div className="displayArea">
-          (allTodos map((item,index)=>
-            return (
-              <div className="items">
+          <div className="items">
             <h2>Task 1</h2>
             <p> Description</p>
           </div>
@@ -71,8 +69,6 @@ function App() {
           <MdDeleteOutline className="del-icon"/>
           <CiBookmarkCheck className="check-icon"/>
           </div>
-            )
-          ))
 
         </div>
       
