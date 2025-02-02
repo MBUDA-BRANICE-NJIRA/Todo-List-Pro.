@@ -65,8 +65,8 @@ function App() {
          {allTodos.map((item,index)=>{
           return(
             <div className="items" key={index}>
-            <h2>Task 1</h2>
-            <p> Description</p>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
           </div>
           )
          })}
