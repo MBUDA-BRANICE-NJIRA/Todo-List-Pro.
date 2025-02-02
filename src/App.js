@@ -45,7 +45,7 @@ function App() {
         <div className="todo-input">
           <div className="todo-items">
             <label>Title</label>
-            <input type="text" value={newTitle} onChange={(e)=>setNewTitle(e.target.value)} placeholder="Task For the Day" />
+            <input type="text" value={newTitle} onChange={(e)=>setNewTitle(e.target.value)} placeholder=" Event" />
           </div>
 
           <div className="todo-items">
