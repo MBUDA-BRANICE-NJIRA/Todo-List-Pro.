@@ -36,7 +36,6 @@ function App() {
     }
   },[])
 
-
   return (
     <div className="App">
       <h1>The Planner</h1>
@@ -87,9 +86,7 @@ function App() {
           <MdDeleteOutline className="del-icon"/>
           <CiBookmarkCheck className="check-icon"/>
           </div>
-
         </div>
-      
       </div>
     
     </div>
