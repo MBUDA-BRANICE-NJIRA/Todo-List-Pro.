@@ -4,7 +4,24 @@ import { CiBookmarkCheck } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 
 function App() {
-  const [isCompleteScreen, setIsCompleteScreen] = useState(false);
+  // This is for functionality of the color changing
+  const [isCompleteScreen, setIsCompleteScreen] = useState(false); 
+
+  // state to contail all todo list
+
+  const[allTodos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
+  const[newDescription, setNewDescription]= useState("");
+
+  const handleAddTodo = () => {
+    let newTodoItem = {
+      title:newTitle,
+      description:newDescription,
+    }
+    let updatedTodoArr =[...allTodos];
+    updatedTodoArr,push(newTodoItem);
+    setTodos(updatedTodoArr);
+  }
 
   return (
     <div className="App">
@@ -14,15 +31,15 @@ function App() {
         <div className="todo-input">
           <div className="todo-items">
             <label>Title</label>
-            <input type="text" placeholder="Task For the Day" />
+            <input type="text" value={newTitle} onchange={(e)=>setNewTitle(e.target.value)} placeholder="Task For the Day" />
           </div>
 
           <div className="todo-items">
             <label>Descriiption</label>
-            <input type="text" placeholder="Task For the Description" />
+            <input type="text" value={newDescription} onchange={(e)=>setNewDescription(e.target.value)} placeholder="Task For the Description" />
           </div>
 
-          <button className="primary-button" type="button">
+          <button className="primary-button" type="button" onClick={handleAddTodo}>
             Add
           </button>
         </div>
@@ -43,7 +60,9 @@ function App() {
         </div>
 
         <div className="displayArea">
-          <div className="items">
+          (allTodos map((item,index)=>
+            return (
+              <div className="items">
             <h2>Task 1</h2>
             <p> Description</p>
           </div>
@@ -52,6 +71,8 @@ function App() {
           <MdDeleteOutline className="del-icon"/>
           <CiBookmarkCheck className="check-icon"/>
           </div>
+            )
+          ))
 
         </div>
       
