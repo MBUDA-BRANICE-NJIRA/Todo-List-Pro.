@@ -30,7 +30,10 @@ function App() {
 
   // use effect hork for when the page is rendered
   useEffect(() => {
-    const storedTodos = localStorage.getItem("todolist");
+    let savedTodo = JSON.parse(localStorage.getItem(`todolist`));
+    if (savedTodo) {
+      setTodos(savedTodo)
+    }
   },[])
 
 
