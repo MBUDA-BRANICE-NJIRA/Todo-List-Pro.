@@ -50,7 +50,7 @@ function App() {
 
           <div className="todo-items">
             <label>Description</label>
-            <input type="text" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} placeholder="Task For the Description" />
+            <input type="text" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} placeholder=" Activity" />
           </div>
 
           <button className="primary-button" type="button" onClick={handleAddTodo}>
